@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  /* display: flex; */
+  width: 150%;
+  border: 2px solid;
+  border-color: red;
+  margin: 40px;
+  border-radius: 40px;
+  align-self: center;
+}
+
+.container {
+  min-width: 960px;
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  /* margin: 20px auto; */
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 30%px;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  margin: 20 px;
+  width: 200px;
+  height: 50px;
+  border-radius: 60px;
+  margin-bottom: 18px;
+}
+
+button:hover {
+  background-color: #bddb13;
+}
+
+input {
+  border: 1px solid rgb(196, 33, 33);
+  border-radius: 60px;
+  margin-bottom: 16px;
+  padding: 24px 22px;
+  font-size: 18px;
+  width: 350px;
+  height: 68px;
+  background: transparent;
+  box-sizing: border-box;
+  outline: none;
+  color: rgb(24, 18, 18);
+  font-family: "Steppe-ExtraBold", sans-serif;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+select {
+  /* display: none;  */
+  /* Скрываем стандартный select */
+  border: 1px solid rgb(196, 33, 33);
+  border-radius: 60px;
+  margin-bottom: 16px;
+  padding: 0px 22px;
+  font-size: 18px;
+  width: 100%;
+  height: 150px;
+  background: transparent;
+  box-sizing: border-box;
+  outline: none;
+  color: rgb(24, 18, 18);
+  font-family: "Steppe-ExtraBold", sans-serif;
+  font-size: 18px;
+  line-height: 130%;
+  /* display: none; Скрываем стандартный select */
+}
+
+select.show {
+  display: block; /* Показываем выбор при активации */
+}
+
+select option {
+  padding: 10px;
+}
+
+.menu {
+  position: fixed;
+  right: 10px;
+  top: 170px;
+  border: 2px solid white;
+  padding: 5px 10px;
+  /* border-color: red; */
+  /* margin: 40px; */
+
+  align-self: center;
+  height: 400x;
+  min-width: 150px;
+  border-radius: 40px;
+  /* text-align: center; */
+  padding-left: 5px;
+  cursor: pointer;
+  line-height: 28px;
+  z-index: 1;
+  user-select: none;
+  transform: scale(1);
+
+  background-color: aqua;
+
+  /* -webkit-backface-visibility: hidden; */
+
+  /* border: 1px solid red; помогает увидеть границы меню при настройке */
+}
+
+@viewport {
+  user-zoom: fixed;
+}
+
+.menu_inner {
+  margin: 10px 0;
+  /* отступ сверху 25, а побокам 0 */
+  /* display: flex; */
+  /* выводим блоки в одну строку */
+  /* justify-content: space-between; */
+  /* Раскидываем блоки по краям */
+  align-items: center;
+  /* Выравнивание по вертикали */
+}
+
+#img_logo {
+  width: 400px;
+  height: 200px;
+}
+
+.nav {
+  /* display: flex; */
+  list-style: none;
+  /* Убираем кругляжки у элементов списка */
+  padding: 10px;
+  margin: 0;
+}
+
+.nav li {
+  margin-bottom: 20px;
+}
+
+.nav li a {
+  text-transform: uppercase;
+  /* Делаем все буквы заглавными */
+  color: red;
+  /* Серый цвет текста */
+  text-decoration: none;
+  /* Убирает подчеркивание ссылки */
+  /* padding: 20px 15px; */
+  /* отступы сверху 10px, а по бокам 20 */
+  /* padding: 10px; */
+  margin-bottom: 200px;
+}
+
+.nav li a:hover {
+  /* Задание эффекта при наведении на ссылку */
+  background-color: #ffc744;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
