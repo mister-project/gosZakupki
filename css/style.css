@@ -36,6 +36,10 @@ td {
   text-align: center;
 }
 
+tr td:nth-child(5) {
+  color: red;
+}
+
 .modal {
   display: none;
   position: fixed;

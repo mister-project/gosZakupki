@@ -1,62 +1,117 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="”viewport”" content="”user-scalable" ="no”" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" type="image/png" href="jmg/150-150.png" />
-    <script src="./scripts/modalWindow.js" defer></script>
-    <script src="./scripts/exportToJson.js" defer></script>
-    <script src="./scripts/importJson.js" defer></script>
-    <title>ГОСЗАКУП</title>
-  </head>
-  <body>
-    <!-- МОДАЛЬНОЕ ОКНО НАЧАЛО -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <button id="updateButton">Обновить</button>
-        <form id="form"></form>
-        <button id="submit">Отправить в таблицу</button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="”viewport”" content="”user-scalable"="no”" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" type="image/png" href="jmg/150-150.png" />
+  <script src="./scripts/modalWindow.js" defer></script>
+  <script src="./scripts/exportToJson.js" defer></script>
+  <script src="./scripts/importJson.js" defer></script>
+  <script src="./scripts/conversionToLink.js" defer></script>
+  <title>ГОСЗАКУП</title>
+</head>
+
+<body>
+  <!-- МОДАЛЬНОЕ ОКНО НАЧАЛО -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <button id="updateButton">Обновить</button>
+      <form id="form"></form>
+      <button id="submit">Отправить в таблицу</button>
     </div>
-    <!-- МОДАЛЬНОЕ ОКНО ОКОНЧАНИЕ -->
+  </div>
+  <!-- МОДАЛЬНОЕ ОКНО ОКОНЧАНИЕ -->
 
-    <!-- КНОПКИ НАЧАЛО -->
-    <div>
-      <button id="downloadBtnJson">СОХРАНИТЬ в JSON все таблицы</button>
-    </div>
-    <!-- КНОПКИ ОКОНЧАНИЕ -->
-    <input type="file" id="fileInput" accept=".json" />
+  <!-- КНОПКИ НАЧАЛО -->
+  <div>
 
-    <div id="advertisement" class="container">
-      <a name="zayavki"></a>
-      <button id="openModalZayavki">Открыть форму Заявок</button>
-      <table id="advertisementTabl" class="table table-striped table-bordered">
-        <caption>
-          <h3>ЗАЯВКИ</h3>
-        </caption>
-        <thead>
-          <th id="idGroup">id_Заявки</th>
-          <th id="dateOfPlacement">Дата_Размещения</th>
-          <th id="updated">Обновлено</th>
-          <th id="deadline">СрокПодачи</th>
-          <th id="deadlineResult">Подведение Итогов</th>
-          <th id="objectTransferDeadlines">
-            Сроки Передачи Объекта (Контракт)
-          </th>
-          <th id="paymentPeriod">Сроки Оплаты (Контракт)</th>
+    <button id="downloadBtnJson">СОХРАНИТЬ в JSON все таблицы</button>
+  </div>
 
-          <th id="city">Город</th>
-          <th id="Customer">ОрганизацияЗаказчик</th>
-          <th id="govContact">Контактное лицо</th>
-          <th id="hyperlink">Ссылка</th>
-          <th id="initialRate">Сумма заявки</th>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </body>
+  <input type="file" id="fileInput" accept=".json" />
+  <!-- КНОПКИ ОКОНЧАНИЕ -->
+  <!-- ======================= -->
+  <!-- ЗВОНКИ НАЧАЛО -->
+  <div id="callsContainer" class="container">
+    <a name="calls"></a>
+    <button id="openModalCalls">Открыть форму Звонка</button>
+
+    <table id="callsTabl" class="table table-striped table-bordered">
+      <caption>
+        <h3>ЗВОНКИ</h3>
+      </caption>
+      <thead>
+        <th id="idAd">id Звонка</th>
+        <th id="dateOfCall">Дата Звонка</th>
+        <th id="adFlat">Объявление о продаже</th>
+        <th id="city">Код закупки</th>
+        <th id="callResult">Чем закончилось общение</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <!-- ЗВОНКИ ОКОНЧАНИЕ -->
+  <!-- ======================= -->
+  <!-- ОБЪЯВЛЕНИЯ О ПРОДАЖЕ НАЧАЛО -->
+  <div id="flatSale" class="container">
+    <a name="advertisements"></a>
+    <button id="openModalAdvertisements">Открыть форму Объявлений</button>
+    <button id="shortLinksAdvertisements">Активировать ссылки</button>
+    <table id="advertisementTabl" class="table table-striped table-bordered">
+      <caption>
+        <h3>ОБЪЯВЛЕНИЯ</h3>
+      </caption>
+      <thead>
+        <th id="idAd">id_Объявления</th>
+        <th id="auctionFlat">Аукцион</th>
+        <th id="">Номер Заявки</th>
+        <th id="adressOfFlat">Адрес Квартиры</th>
+        <th id="flatPrice">Цена Квартиры</th>
+        <th id="hyperlinkAd">Ссылка на объявление</th>
+
+
+
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <!-- ОБЪЯВЛЕНИЯ О ПРОДАЖЕ ОКОНЧАНИЕ -->
+  <!-- =============== -->
+  <!-- КОНТЕЙНЕР ДЛЯ АУКЦИОНОВ НАЧАЛО -->
+  <div id="auctions" class="container">
+    <a name="zayavki"></a>
+    <button id="openModalZayavki">Открыть форму Заявок</button>
+    <button id="shortLinksZayavki">Активировать ссылки</button>
+    <table id="auctionTabl" class="table table-striped table-bordered">
+      <caption>
+        <h3>ЗАЯВКИ</h3>
+      </caption>
+      <thead>
+        <th id="idGroup">id Заявки</th>
+        <th id="dateOfPlacement">Дата Размещения</th>
+        <!-- <th id="updated">Обновлено</th> -->
+        <th id="deadline">СрокПодачи</th>
+        <th id="deadlineResult">Подведение Итогов</th>
+        <th id="initialRate">Сумма_заявки</th>
+        <th id="objectTransferDeadlines">
+          Сроки Передачи Объекта (Контракт)
+        </th>
+        <th id="paymentPeriod">Сроки Оплаты (Контракт)</th>
+        <th id="city">Город</th>
+        <th id="Customer">ОрганизацияЗаказчик</th>
+        <th id="govContact">Контактное лицо</th>
+        <th id="hyperlink">Ссылка</th>
+
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <!-- КОНТЕЙНЕР ДЛЯ АУКЦИОНОВ ОКОНЧАНИЕ -->
+</body>
+
 </html>

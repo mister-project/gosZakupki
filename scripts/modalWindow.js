@@ -80,12 +80,12 @@ const getModalWindow = (modalWindow) => {
       }
       if (index === modalWindow.idInputSelect) {
         // ввод окна поиска из выпадающего списка
-        const inputElement = document.createElement("input");
-        div.appendChild(inputElement);
-        // Устанавливаем атрибуты
-        inputElement.type = "text";
-        inputElement.id = "searchSelect";
-        inputElement.placeholder = "Начните вводить...";
+        // const inputElement = document.createElement("input");
+        // div.appendChild(inputElement);
+        // // Устанавливаем атрибуты
+        // inputElement.type = "text";
+        // inputElement.id = "searchSelect";
+        // inputElement.placeholder = "Начните вводить...";
         // form.appendChild(inputElement);
 
         //создаем select для выпадающего списка и кладем в нужное поле
@@ -158,23 +158,68 @@ const getModalWindow = (modalWindow) => {
   };
 };
 
-
-
-
-
-
-
-//Подзагрузка таблицы по Заявкам
+// Подгрузка таблицы СО ЗВОНКАМИ --- Начало
 try {
+  document.querySelector("#openModalCalls").addEventListener("click", () => {
+    getModalWindow(callsBtn);
+  });
+  const callsBtn = {
+    columnIdStr: 0, //Номер столбца с ID кодом
+    containerId: "#callsContainer", //ИД контейнера
+    tableId: "#callsTabl", //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
+    modalButtonId: "#openModalCalls", //'#openModal',//ИД кнопки открытия мобильного окна
+    modalId: "#modal", //Ид модального окна
+    // buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
+    idInputSelect: 2, //номер поля в форме, куда вставляется вып. список
+    idTableSelect: "#advertisementTabl", //имя таблицы, содержащей данные для вып. списка
+    idColSelect: 3, // номер столбца таблицы, содержащего данные для вып.  списка
+    idColSelectValue: 2, // номер столбца в таблице, откуда берем ID (value) вставляемого значения
+  };
 
+  localStor(callsBtn); //Запуск функции загрузки данныех из  LS
+} catch (error) {
+  console.log("неполадочки в таблице Объявлений");
+}
+// Подгрузка таблицы СО ЗВОНКАМИ --- оКОНЧАНИЕ
+
+// Подгрузка таблицы по Объявлениям продажи квартир --- Начало
+try {
+  document
+    .querySelector("#openModalAdvertisements")
+    .addEventListener("click", () => {
+      console.log("жмяк");
+
+      getModalWindow(flatAd);
+    });
+  const flatAd = {
+    columnIdStr: 0, //Номер столбца с ID кодом
+    containerId: "#flatSale", //ИД контейнера
+    tableId: "#advertisementTabl", //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
+    modalButtonId: "#openModalAdvertisements", //'#openModal',//ИД кнопки открытия мобильного окна
+    modalId: "#modal", //Ид модального окна
+    // buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
+    idInputSelect: 1, //номер поля в форме, куда вставляется вып. список
+    idTableSelect: "#auctionTabl", //имя таблицы, содержащей данные для вып. списка
+    idColSelect: 7, // номер столбца таблицы, содержащего данные для вып.  списка
+    idColSelectValue: 0, // номер столбца в таблице, откуда берем ID (value) вставляемого значения
+  };
+
+  localStor(flatAd); //Запуск функции загрузки данныех из  LS
+} catch (error) {
+  console.log("неполадочки в таблице Объявлений");
+}
+// Подгрузка таблицы по Объявлениям продажи квартир --- оКОНЧАНИЕ
+
+//Подзагрузка таблицы по Заявкам -- Начало
+try {
   document.querySelector("#openModalZayavki").addEventListener("click", () => {
     console.log("кнопка");
     getModalWindow(zayavki);
   });
   const zayavki = {
     columnIdStr: 0, //Номер столбца с ID кодом
-    containerId: "#advertisement", //ИД контейнера
-    tableId: "#advertisementTabl", //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
+    containerId: "#auctions", //ИД контейнера
+    tableId: "#auctionTabl", //'#thingsAndPlases', //ИД таблицы, в которую будем заносить данные
     modalButtonId: "#openModalZayavki", //'#openModal',//ИД кнопки открытия модального окна
     modalId: "#modal", //Ид модального окна
     // buttonSubmitId: '#submitPlaces', // класс кнопки внесения данных
