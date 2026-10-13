@@ -17,7 +17,7 @@ function convertTextToLinks(param) {
         const link = document.createElement("a");
         link.href = cellContent; // Устанавливаем адрес ссылки
         link.target = "_blank"; // Открывать в новой вкладке
-        link.innerText = "ССЫЛКА"; // Устанавливаем текст ссылки
+        link.textContent = fullUrl; // Устанавливаем текст ссылки
 
         // Очищаем содержимое ячейки и добавляем ссылку
         cell.innerHTML = "";
