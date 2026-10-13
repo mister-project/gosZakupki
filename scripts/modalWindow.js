@@ -131,6 +131,7 @@ const getModalWindow = (modalWindow) => {
           insertId(i, cells[i].value);
         } else {
           newCell.textContent = cells[i].value;
+          // newCell.classList.add(cells[i].placeholder);
         }
       }
       // debugger;
