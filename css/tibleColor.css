@@ -1,0 +1,22 @@
+/* Базовые стили таблицы (если вдруг сбросились из-за наших правил) */
+#advertisementTabl {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#advertisementTabl th,
+#advertisementTabl td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+/* Бледно‑красный для строк, где в 6‑м столбце «нет» */
+.row-no {
+  background-color: #ebe046; /* очень бледный красный */
+}
+
+/* Бледно‑зелёный для строк, где в 6‑м столбце «да» */
+.row-yes {
+  background-color: #36e445; /* очень бледный зелёный */
+}

@@ -280,7 +280,8 @@ table.adaptive-table {
   position: sticky;
   top: 0;
   z-index: 10;
-  white-space: nowrap; /* заголовок не переносится, остаётся компактным */
+  /* white-space: nowrap; заголовок не переносится, остаётся компактным */
+  overflow-wrap: break-word;
 }
 
 /* Ячейки с адресами и ссылками — более гибкий перенос */
@@ -303,12 +304,12 @@ table.adaptive-table {
 }
 
 /* Вариант 1: многоточие для очень длинных ссылок (если не хочешь, чтобы они сильно растягивали таблицу) */
-.adaptive-table .col-link a {
+/* .adaptive-table .col-link a {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
+} */
 
 /* Вариант 2 (альтернатива): если хочешь, чтобы ссылка переносилась по словам — раскомментируй этот блок и закомментируй предыдущий */
 /*
@@ -336,4 +337,31 @@ table.adaptive-table {
   .adaptive-table .col-link {
     max-width: none; /* на мобильном лучше дать ячейкам растягиваться по контенту */
   }
+}
+/* ОБРЫВАЮ ССЫЛКИ И СТАВЛЮ МНОГОТОЧИЕ... */
+#advertisementTabl a {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#auctionTabl a {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.adaptive-table td:nth-child(4),
+.adaptive-table th:nth-child(4) {
+  /* 4-я колонка — адрес */
+  max-width: 300px;
+}
+
+.adaptive-table td:last-child,
+.adaptive-table th:last-child {
+  /* последняя колонка — ссылка */
+  max-width: 350px;
 }
