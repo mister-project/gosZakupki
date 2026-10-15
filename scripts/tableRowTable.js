@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (lower.includes("нет")) {
       row.classList.add("row-no");
-    } else if (lower === "да") {
+    } else if (lower.includes("да")) {
       row.classList.add("row-yes");
     }
     // Если значение не «да» и не «нет», строка остаётся без спеццвета
