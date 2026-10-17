@@ -279,7 +279,7 @@ table.adaptive-table {
   background-color: #f5f5f5;
   position: sticky;
   top: 0;
-  z-index: 10;
+  /* z-index: 10; */
   /* white-space: nowrap; заголовок не переносится, остаётся компактным */
   overflow-wrap: break-word;
 }

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="”viewport”" content="”user-scalable"="no”" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/addResultCall.css" />
+    <script src="./scripts/getAddResult.js" defer></script>
+
+    <title>Эксперимент</title>
+</head>
+
+<body>
+    <!-- ============================== -->
+    <!-- МОДАЛЬНОЕ ОКНО ВСТАВКИ РЕЗУЛЬТАТА ЗВОНКА В ТАБЛИЦУ  НАЧАЛО -->
+    <!-- Модальное окно -->
+    <div id="callsModal" class="modal"
+        style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+        <div style="background:#fff; padding:24px; border-radius:8px; width:100%; max-width:500px;">
+            <h3>Новый звонок</h3>
+            <form id="callsForm">
+                <!-- Номер: не показываем, будет присвоен автоматически -->
+                <input type="hidden" id="callNumber">
+
+                <label>Дата звонка:
+                    <input type="date" id="callDate" required style="width:100%;">
+                </label>
+                <br><br>
+
+                <label>Адрес:
+                    <input type="text" id="callAddress" readonly style="width:100%;"
+                        title="Подставляется автоматически">
+                </label>
+                <br><br>
+
+                <label>Ссылка:
+                    <input type="url" id="callLink" readonly style="width:100%;" title="Подставляется автоматически">
+                </label>
+                <br><br>
+
+                <label>Результат разговора:
+                    <textarea id="callResult" rows="4" style="width:100%;"></textarea>
+                </label>
+                <br><br>
+
+                <button type="submit"
+                    style="padding:8px 16px; background:#007bff; color:#fff; border:none; border-radius:4px;">Записать</button>
+                <button type="button" id="callsModalClose" style="padding:8px 16px;">Отмена</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО ВСТАВКИ РЕЗУЛЬТАТА ЗВОНКА В ТАБЛИЦУ  ОКОНЧАНИЕ -->
+    <!--  -->
+    <div>
+        <table id="callsTabl" class="table adaptive-table table table-striped table-bordered">
+            <caption>
+                <h3>ЗВОНКИ</h3>
+            </caption>
+            <thead>
+
+                <th id="idAd">Номер</th>
+                <th id="dateOfCall">Дата</th>
+                <th id="adFlat">Адрес</th>
+                <th id="city">Ссылка</th>
+                <th id="callResult">Результат</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <table id="advertisementTabl" class="table adaptive-table table table-striped table-bordered">
+            <caption>
+                <h3>ОБЪЯВЛЕНИЯ</h3>
+            </caption>
+            <thead>
+                <tr>
+                    <th id="idAd">id_Объявления</th>
+                    <th id="auctionFlat">Аукцион</th>
+                    <th id="">Номер Заявки</th>
+                    <th id="adressOfFlat">Адрес Квартиры</th>
+                    <th id="flatPrice">Цена Квартиры</th>
+                    <th>Контакт</th>
+                    <th>Телефон</th>
+                    <th id="relevance">Актуальность</th>
+                    <th id="hyperlinkAd">Ссылка на объявление</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row-no">
+                    <td>261011222527</td>
+                    <td>Иваново</td>
+                    <td>0833600000826001028</td>
+                    <td>Иваново, Ташкентская ул., 98</td>
+                    <td>2 750 000</td>
+                    <td>Менеджер Иванов</td>
+                    <td><a href="tel:+79990000001">+7 (999) 000-00-01</a></td>
+                    <td>нет. Квартира в ипотеке</td>
+                    <td><a href="https://ivanovo.cian.ru/sale/flat/333596207/?mlSearchSessionGuid=2b5d8edcf0e606e9476cabb3b5d4109f&amp;context=4.cT66xYYquoE.ZZLG7_XfEAkxBAoHEIQS8h-qyhl9dUDZD9go7hqLv2wVbUdaQv8a662KMJGL2R6wJ1wTpPcdI8CgjQ-230nYX05kFBdQHOT402JcK6pgpw"
+                            target="_blank" rel="noopener noreferrer">Ссылка</a></td>
+                </tr>
+                <tr class="row-no">
+                    <td>261011235814</td>
+                    <td>Иваново</td>
+                    <td>0833600000826001028</td>
+                    <td>Иваново ул. Новая 6</td>
+                    <td>2 899 000 ₽</td>
+                    <td>Менеджер Петров</td>
+                    <td><a href="tel:+79990000002">+7 (999) 000-00-02</a></td>
+                    <td>нет. перепланировка</td>
+                    <td><a href="https://ivanovo.domclick.ru/card/sale__flat__2081224268" target="_blank"
+                            rel="noopener noreferrer">Ссылка</a></td>
+                </tr>
+                <tr class="row-no">
+                    <td>261012002459</td>
+                    <td>Иваново</td>
+                    <td>0833600000826001028</td>
+                    <td>Иваново ул Академическая 14</td>
+                    <td>2 999 999</td>
+                    <td>Менеджер Сидоров</td>
+                    <td><a href="tel:+79990000003">+7 (999) 000-00-03</a></td>
+                    <td>нет</td>
+                    <td><a href="https://ivanovo.cian.ru/sale/flat/333067194/?context=4.WGPLs0F5t9w.dPYcpQuM0bfCxZvztlUvjvBtdcMENInkc4RK4A8e8kDvEZsDOz8HCAyf1H7pubUgfllb_Q3TWpv6nZO0GAQ&amp;mlSearchSessionGuid=2b5d8edcf0e606e9476cabb3b5d4109f"
+                            target="_blank" rel="noopener noreferrer">Ссылка</a></td>
+                </tr>
+                <tr class="row-no">
+                    <td>261012120039</td>
+                    <td>Иваново</td>
+                    <td>0833600000826001028</td>
+                    <td>Иванов ул. ул. 11-я Сосневская, 68</td>
+                    <td>2 800 000</td>
+                    <td>Менеджер Козлов</td>
+                    <td><a href="tel:+79990000004">+7 (999) 000-00-04</a></td>
+                    <td>нет</td>
+                    <td><a href="https://ivanovo.cian.ru/sale/flat/334125202/?context=4.CMXolqm9Juo.wAgWwsrmKgKYQfMhZnLeZX6kaKh1Y4n96kt3atvRqd32QGC5cSKP9XFpkxpbcWzhZR3yxQcCJbIRz6Rp3-g&amp;mlSearchSessionGuid=2b5d8edcf0e606e9476cabb3b5d4109f"
+                            target="_blank" rel="noopener noreferrer">Ссылка</a></td>
+                </tr>
+                <tr>
+                    <td>id 120086</td>
+                    <td>Иваново</td>
+                    <td>0833600000826001028</td>
+                    <td>Иваново, ул. Симонова, 3</td>
+                    <td>3 000 000</td>
+                    <td>Менеджер Новиков</td>
+                    <td><a href="tel:+79990000005">+7 (999) 000-00-05</a></td>
+                    <td></td>
+                    <td><a href="https://vektor.vtcrm.ru/presentation/120086?au=NzM4&amp;class=1" target="_blank"
+                            rel="noopener noreferrer">Ссылка</a></td>
+                </tr>
+                <!-- Остальные строки нужно аналогично дополнить: Контакт и Телефон на 6 и 7 месте, затем Актуальность и Ссылка -->
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
