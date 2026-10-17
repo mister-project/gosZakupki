@@ -9,15 +9,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/tibleColor.css" />
+  <link rel="stylesheet" href="./css/addResultCall.css" />
   <link rel="icon" type="image/png" href="jmg/150-150.png" />
   <script src="./scripts/modalWindow.js" defer></script>
-  <script src="./scripts/exportToJson.js" defer></script>
+  <script src="./scripts/exportToJson copy.js" defer></script>
   <script src="./scripts/importJson.js" defer></script>
   <!-- <script src="./scripts/conversionToLink.js" defer></script> -->
   <script src="./scripts/transformationLinks.js" defer></script>
   <script src="./scripts/filter.js" defer></script>
   <script src="./scripts/tableRowTable.js" defer></script>
-  <title>ГОСЗАКУП</title>
+  <script src="./scripts/getTelLink.js" defer></script>
+
+  <script src="./scripts/getAddResult.js" defer></script>
+  <title>ГОСЗАКУП-КОПИЯ</title>
 </head>
 
 <body>
@@ -57,13 +61,20 @@
     <a href="https://optimus.mts.ru/82959f3b-58b6-4c38-a1ff-e8419ccecad9/calls?drawer=profile" target="_blank"
       class="btn">| МТС-ОПТИМУС
       |</a>
+    <a href="https://надёжный-поставщик.рф" target="_blank" class="btn">| https://надёжный-поставщик.рф
+      |</a>
     <a href="https://almiks.ru/startup" target="_blank" class="btn">| АЛМИКС-СТАРТ
       |</a>
     <a href="https://almiks.ru/script" target="_blank" class="btn">| ОБЩИЙ СКРИПТ
       |</a>
-    <a href="https://almiks.ru/realtor" target="_blank" class="btn">| РИЕЛТОРЫ
-  </div>
 
+    <a href="https://almiks.ru/stimulate" target="_blank" class="btn">| РИЕЛТОРЫ |</a>
+    <a href="https://almiks.ru/investremont" target="_blank" class="btn">| Макс ЦЕНА РЕМОНТА
+      |</a>
+    <a href="https://almiks.ru/remont" target="_blank" class="btn">| Калькулятор Ремонта
+      |</a>
+
+  </div>
 
   <a name="search"></a>
 
@@ -79,6 +90,45 @@
   </div>
   <!-- ОКНО ДЛЯ ФИЛЬТРАЦИИ ОКОНЧАНИЕ -->
   <!-- ======================= -->
+  <!-- ============================== -->
+  <!-- МОДАЛЬНОЕ ОКНО ВСТАВКИ РЕЗУЛЬТАТА ЗВОНКА В ТАБЛИЦУ  НАЧАЛО -->
+  <!-- Модальное окно -->
+  <div id="callsModal" class="modal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+    <div style="background:#fff; padding:24px; border-radius:8px; width:100%; max-width:500px;">
+      <h3>Новый звонок</h3>
+      <form id="callsForm">
+        <!-- Номер: не показываем, будет присвоен автоматически -->
+        <input type="hidden" id="callNumber">
+
+        <label>Дата звонка:
+          <input type="date" id="callDate" required style="width:100%;">
+        </label>
+        <br><br>
+
+        <label>Адрес:
+          <input type="text" id="callAddress" readonly style="width:100%;" title="Подставляется автоматически">
+        </label>
+        <br><br>
+
+        <label>Ссылка:
+          <input type="url" id="callLink" readonly style="width:100%;" title="Подставляется автоматически">
+        </label>
+        <br><br>
+
+        <label>Результат разговора:
+          <textarea id="callResult" rows="4" style="width:100%;"></textarea>
+        </label>
+        <br><br>
+
+        <button type="submit"
+          style="padding:8px 16px; background:#007bff; color:#fff; border:none; border-radius:4px;">Записать</button>
+        <button type="button" id="callsModalClose" style="padding:8px 16px;">Отмена</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО ВСТАВКИ РЕЗУЛЬТАТА ЗВОНКА В ТАБЛИЦУ  ОКОНЧАНИЕ -->
   <!-- ЗВОНКИ НАЧАЛО -->
   <div id="callsContainer" class="container">
     <a name="calls"></a>
@@ -90,14 +140,11 @@
         </caption>
         <thead>
 
-          <th id="idAd">id Звонка</th>
-          <th id="dateOfCall">Дата Звонка</th>
-          <th id="adFlat">Объявление о продаже</th>
-          <th id="city">Код закупки</th>
-          <th id="telephon">Номер телефона</th>
-          <th id="name">Имя собеседника</th>
-          <th id="role">Роль в сделке</th>
-          <th id="callResult">Чем закончилось общение</th>
+          <th id="idAd">Номер</th>
+          <th id="dateOfCall">Дата</th>
+          <th id="adFlat">Адрес</th>
+          <th id="city">Ссылка</th>
+          <th id="callResult">Результат</th>
         </thead>
         <tbody></tbody>
       </table>
@@ -119,9 +166,12 @@
         <thead>
           <th id="idAd">id_Объявления</th>
           <th id="auctionFlat">Аукцион</th>
-          <th id="">Номер Заявки</th>
+          <th id="numberAdd">Номер Заявки</th>
           <th id="adressOfFlat">Адрес Квартиры</th>
           <th id="flatPrice">Цена Квартиры</th>
+          <th id="contact">Контакт</th>
+          <th id="tel">Телефон</th>
+          <th id="atten">Действие</th>
           <th id="relevance">Актуальность</th>
           <th id="hyperlinkAd">Ссылка на объявление</th>
 
