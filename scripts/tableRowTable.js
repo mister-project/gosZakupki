@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   rows.forEach((row) => {
     const cells = row.querySelectorAll("td");
     // 6‑й столбец — это индекс 5 (считаем с 0)
-    if (cells.length < 6) return;
+    if (cells.length < 8) return;
 
-    const value = cells[5].textContent.trim();
+    const value = cells[8].textContent.trim();
     const lower = value.toLowerCase();
 
     // Убираем старые классы перед назначением новых

@@ -183,55 +183,68 @@
     <!-- МОДАЛЬНОЕ ОКНО ВСТАВКИ РЕЗУЛЬТАТА ЗВОНКА В ТАБЛИЦУ  ОКОНЧАНИЕ -->
     <!-- ============================================== -->
     <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ИЗЕНЕНИЯ СТРОК В ТАБЛИЦЕ ОБЪЯВЛЕНИЙ НАЧАЛО -->
-    <!-- Модальное окно изменения строк-->
-    <div id="editAdModal" class="modal-overlay">
-      <div class="modal-window">
-        <div class="modal-header">
-          <h3>Редактировать объявление</h3>
-          <span class="modal-close">&times;</span>
+    <!-- Модальное окно с уникальными классами -->
+    <!-- Модальное окно с прокруткой -->
+    <div id="adEditModal" class="ad-edit-modal-overlay">
+      <div class="ad-edit-modal-window">
+        <div class="ad-edit-header">
+          <h3 class="ad-edit-title">Редактировать объявление</h3>
+          <span class="ad-edit-close">&times;</span>
         </div>
-        <form id="editAdForm">
-          <input type="hidden" id="adRowIndex" value="" />
+        <div class="ad-edit-content">
+          <form id="adEditForm" class="ad-edit-form">
+            <input type="hidden" id="adRowIndex" value="" />
 
-          <div class="form-group">
-            <label for="adId">id_Объявления</label>
-            <input type="text" id="adId" readonly />
-          </div>
-          <div class="form-group">
-            <label for="adAuction">Аукцион</label>
-            <input type="text" id="adAuction" />
-          </div>
-          <div class="form-group">
-            <label for="adNumber">Номер Заявки</label>
-            <input type="text" id="adNumber" />
-          </div>
-          <div class="form-group">
-            <label for="adAddress">Адрес Квартиры</label>
-            <input type="text" id="adAddress" />
-          </div>
-          <div class="form-group">
-            <label for="adPrice">Цена Квартиры</label>
-            <input type="text" id="adPrice" />
-          </div>
-          <div class="form-group">
-            <label for="adContact">Контакт</label>
-            <input type="text" id="adContact" />
-          </div>
-          <div class="form-group">
-            <label for="adTel">Телефон</label>
-            <textarea id="adTel" rows="2"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="adRelevance">Актуальность</label>
-            <select id="adRelevance">
-              <option value="">—</option>
-              <option value="Актуально">Актуально</option>
-              <option value="Продано">Продано</option>
-              <option value="Снято">Снято</option>
-            </select>
-          </div>
-          <button type="submit" class="btn-save">Сохранить</button>
-        </form>
+            <div class="ad-edit-form-group">
+              <label for="adId" class="ad-edit-label">id_Объявления</label>
+              <input
+                type="text"
+                id="adId"
+                class="ad-edit-input-text"
+                readonly
+              />
+            </div>
+            <div class="ad-edit-form-group">
+              <label for="adAuction" class="ad-edit-label">Аукцион</label>
+              <input type="text" id="adAuction" class="ad-edit-input-text" />
+            </div>
+            <div class="ad-edit-form-group">
+              <label for="adNumber" class="ad-edit-label">Номер Заявки</label>
+              <input type="text" id="adNumber" class="ad-edit-input-text" />
+            </div>
+            <div class="ad-edit-form-group">
+              <label for="adAddress" class="ad-edit-label"
+                >Адрес Квартиры</label
+              >
+              <input type="text" id="adAddress" class="ad-edit-input-text" />
+            </div>
+            <div class="ad-edit-form-group">
+              <label for="adPrice" class="ad-edit-label">Цена Квартиры</label>
+              <input type="text" id="adPrice" class="ad-edit-input-text" />
+            </div>
+            <div class="ad-edit-form-group">
+              <label for="adContact" class="ad-edit-label">Контакт</label>
+              <input type="text" id="adContact" class="ad-edit-input-text" />
+            </div>
+            <div class="ad-edit-form-group">
+              <label for="adTel" class="ad-edit-label">Телефон</label>
+              <textarea id="adTel" class="ad-edit-input-textarea"></textarea>
+            </div>
+            <div class="ad-edit-form-group">
+              <label for="adRelevance" class="ad-edit-label"
+                >Актуальность</label
+              >
+              <input
+                type="text"
+                id="adRelevance"
+                class="ad-edit-input-text"
+                placeholder="Например: Актуально / Продано"
+              />
+            </div>
+
+            <button type="submit" class="ad-edit-btn-save">Сохранить</button>
+          </form>
+        </div>
       </div>
     </div>
 

@@ -86,7 +86,7 @@ button:hover {
   background-color: #bddb13;
 }
 
-/* input {
+input {
   border: 1px solid rgb(196, 33, 33);
   border-radius: 60px;
   margin-bottom: 16px;
@@ -101,7 +101,7 @@ button:hover {
   font-family: "Steppe-ExtraBold", sans-serif;
   font-size: 18px;
   line-height: 130%;
-} */
+}
 
 select {
   /* display: none;  */

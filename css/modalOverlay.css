@@ -1,4 +1,4 @@
-.modal-overlay {
+.ad-edit-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,35 +9,79 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  font-family: Arial, sans-serif;
 }
-.modal-window {
+.ad-edit-modal-window {
   background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 400px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 16px; /* меньше отступ по краям */
+  border-radius: 10px;
+  width: 100%;
+  max-width: 440px; /* адаптивная ширина */
+  max-height: 85vh; /* не выше 85% высоты экрана */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
 }
-.modal-header {
+.ad-edit-content {
+  overflow-y: auto; /* вертикальная прокрутка, если не влезает */
+  padding-right: 8px; /* чтобы скроллбар не «наезжал» на контент */
+}
+.ad-edit-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  flex-shrink: 0; /* шапка не сжимается */
 }
-.modal-close {
+.ad-edit-title {
+  margin: 0;
+  font-size: 1.15rem;
+}
+.ad-edit-close {
   cursor: pointer;
   font-weight: bold;
+  color: #555;
+  line-height: 1;
 }
-.form-group {
-  margin-bottom: 10px;
+.ad-edit-form-group {
+  margin-bottom: 12px; /* чуть меньше отступы между полями */
 }
-.form-group label {
+.ad-edit-label {
   display: block;
   margin-bottom: 4px;
+  font-weight: 500;
+  color: #333;
 }
-.form-group input,
-.form-group select,
-.form-group textarea {
+.ad-edit-input-text {
   width: 100%;
-  padding: 6px;
+  padding: 6px 8px; /* меньше высота инпута */
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
+  font-size: 0.9rem;
+}
+.ad-edit-input-textarea {
+  width: 100%;
+  height: 60px; /* уменьшенная высота textarea */
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 0.9rem;
+}
+.ad-edit-btn-save {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px; /* чуть меньше кнопка */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  width: 100%;
+  margin-top: 8px; /* небольшой отступ сверху */
+  flex-shrink: 0; /* кнопка не сжимается */
+}
+.ad-edit-btn-save:hover {
+  background-color: #0056b3;
 }
