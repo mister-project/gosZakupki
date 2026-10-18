@@ -41,5 +41,5 @@ try {
 try {
   getFilter("#filter", "#advertisementTabl");
 } catch (error) {
-  console.log("Не работает фильтр для таблицы ЗВОНКОВ");
+  console.log("Не работает фильтр для таблицы Обьявлений");
 }
