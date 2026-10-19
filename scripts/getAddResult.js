@@ -48,10 +48,11 @@
     const cell = row.children[7]; // индекс 7 = 8‑я ячейка
     if (!cell) return;
 
-    const btnCall = document.createElement("span");
+    const btnCall = document.createElement("img");
     btnCall.className = "add-call-btn";
     btnCall.title = "Добавить звонок";
-    btnCall.textContent = "+"; // можно заменить на SVG иконку
+    // btnCall.textContent = "+"; // можно заменить на SVG иконку
+    btnCall.src = "img/call.png";
 
     btnCall.onclick = () => {
       // Заполняем форму данными из текущей строки
