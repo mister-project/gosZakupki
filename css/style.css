@@ -365,3 +365,6 @@ table.adaptive-table {
   /* последняя колонка — ссылка */
   max-width: 350px;
 }
+input[type="checkbox" i] {
+  width: 50px;
+}

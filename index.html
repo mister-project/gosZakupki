@@ -1,344 +1,288 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta name="”viewport”" content="”user-scalable"="no”" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/tibleColor.css" />
-    <link rel="stylesheet" href="./css/addResultCall.css" />
-    <link rel="stylesheet" href="./css/modalOverlay.css" />
-    <!-- стили модального окна для изменения срок таблицы -->
-    <link rel="icon" type="image/png" href="jmg/150-150.png" />
-    <script src="./scripts/modalWindow.js" defer></script>
-    <script src="./scripts/exportToJson copy.js" defer></script>
-    <script src="./scripts/importJson.js" defer></script>
-    <!-- <script src="./scripts/conversionToLink.js" defer></script> -->
-    <script src="./scripts/transformationLinks.js" defer></script>
+<head>
+  <meta charset="UTF-8" />
 
-    <script src="./scripts/tableRowTable.js" defer></script>
-    <script src="./scripts/getTelLink.js" defer></script>
-    <!-- скрипт преобразования телефона в ссылку -->
-    <script src="./scripts/correctRowAdd.js" defer></script>
-    <script src="./scripts/getAddResult.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <meta name="”viewport”" content="”user-scalable"="no”" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/tibleColor.css" />
+  <link rel="stylesheet" href="./css/addResultCall.css" />
+  <link rel="stylesheet" href="./css/modalOverlay.css" />
+  <!-- стили модального окна для изменения срок таблицы -->
+  <link rel="icon" type="image/png" href="jmg/150-150.png" />
+  <script src="./scripts/modalWindow.js" defer></script>
+  <script src="./scripts/exportToJson copy.js" defer></script>
+  <script src="./scripts/importJson.js" defer></script>
+  <!-- <script src="./scripts/conversionToLink.js" defer></script> -->
+  <script src="./scripts/transformationLinks.js" defer></script>
 
-    <script src="./scripts/filter.js" defer></script>
-    <title>ГОСЗАКУП2.0</title>
-  </head>
+  <script src="./scripts/tableRowTable.js" defer></script>
+  <script src="./scripts/getTelLink.js" defer></script>
+  <!-- скрипт преобразования телефона в ссылку -->
+  <script src="./scripts/correctRowAdd.js" defer></script>
+  <script src="./scripts/getAddResult.js" defer></script>
 
-  <body>
-    <h2>+7 980 689 42 58</h2>
-    <!-- МОДАЛЬНОЕ ОКНО Общее НАЧАЛО -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <button id="updateButton">Обновить</button>
-        <form id="form"></form>
-        <button id="submit">Отправить в таблицу</button>
-      </div>
+  <script src="./scripts/filter.js" defer></script>
+  <title>ГОСЗАКУП2.0</title>
+</head>
+
+<body>
+  <h2>+7 980 689 42 58</h2>
+  <!-- МОДАЛЬНОЕ ОКНО Общее НАЧАЛО -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <button id="updateButton">Обновить</button>
+      <form id="form"></form>
+      <button id="submit">Отправить в таблицу</button>
     </div>
-    <!-- МОДАЛЬНОЕ ОКНО общее ОКОНЧАНИЕ -->
-    <!-- ============================================= -->
-    <!-- МЕНЮ НАЧАЛО -->
-    <div class="menu">
-      <div class="menu_inner">
-        <!-- <div class="logo">
+  </div>
+  <!-- МОДАЛЬНОЕ ОКНО общее ОКОНЧАНИЕ -->
+  <!-- ============================================= -->
+  <!-- МЕНЮ НАЧАЛО -->
+  <div class="menu">
+    <div class="menu_inner">
+      <!-- <div class="logo">
           <img id="img_logo" src="./jmg/web-developer-logo.jpg" alt="" />
         </div> -->
-        <ul class="nav">
-          <li><a href="#search">Поиск</a></li>
-          <li><a href="#calls">Звонки</a></li>
-          <li><a href="#advertisements">Объявления</a></li>
-          <li><a href="#zayavki">ГосЗакупки</a></li>
-        </ul>
-      </div>
+      <ul class="nav">
+        <li><a href="#search">Поиск</a></li>
+        <li><a href="#calls">Звонки</a></li>
+        <li><a href="#advertisements">Объявления</a></li>
+        <li><a href="#zayavki">ГосЗакупки</a></li>
+      </ul>
     </div>
-    <!-- МЕНЮ ОКОНЧАНИЕ -->
-    <!-- =========================================== -->
-    <!-- КНОПКИ НАЧАЛО -->
-    <div>
-      <button id="downloadBtnJson">СОХРАНИТЬ в JSON все таблицы</button>
-      <a
-        href="https://optimus.mts.ru/82959f3b-58b6-4c38-a1ff-e8419ccecad9/calls?drawer=profile"
-        target="_blank"
-        class="btn"
-        >| МТС-ОПТИМУС |</a
-      >
-      <a href="https://надёжный-поставщик.рф" target="_blank" class="btn"
-        >| https://надёжный-поставщик.рф |</a
-      >
-      <a href="https://almiks.ru/startup" target="_blank" class="btn"
-        >| АЛМИКС-СТАРТ |</a
-      >
-      <a href="https://almiks.ru/script" target="_blank" class="btn"
-        >| ОБЩИЙ СКРИПТ |</a
-      >
+  </div>
+  <!-- МЕНЮ ОКОНЧАНИЕ -->
+  <!-- =========================================== -->
+  <!-- КНОПКИ НАЧАЛО -->
+  <div>
+    <button id="downloadBtnJson">СОХРАНИТЬ в JSON все таблицы</button>
+    <a href="https://optimus.mts.ru/82959f3b-58b6-4c38-a1ff-e8419ccecad9/calls?drawer=profile" target="_blank"
+      class="btn">| МТС-ОПТИМУС |</a>
+    <a href="https://надёжный-поставщик.рф" target="_blank" class="btn">| https://надёжный-поставщик.рф |</a>
+    <a href="https://almiks.ru/startup" target="_blank" class="btn">| АЛМИКС-СТАРТ |</a>
+    <a href="https://almiks.ru/script" target="_blank" class="btn">| ОБЩИЙ СКРИПТ |</a>
 
-      <a href="https://almiks.ru/stimulate" target="_blank" class="btn"
-        >| РИЕЛТОРЫ |</a
-      >
-      <a href="https://almiks.ru/investremont" target="_blank" class="btn"
-        >| Макс ЦЕНА РЕМОНТА |</a
-      >
-      <a href="https://almiks.ru/remont" target="_blank" class="btn"
-        >| Калькулятор Ремонта |</a
-      >
-    </div>
-    <a name="search"></a>
-    <input type="file" id="fileInput" accept=".json" />
-    <!-- КНОПКИ ОКОНЧАНИЕ -->
-    <!-- ======================== -->
-    <!-- ОКНО ДЛЯ ФИЛЬТРАЦИИ НАЧАЛО-->
-    <div>
-      <input type="text" id="filter" placeholder="Фильтровать" />
-      <button id="btnFilter">Фильтровать</button>
-    </div>
-    <!-- ОКНО ДЛЯ ФИЛЬТРАЦИИ ОКОНЧАНИЕ -->
-    <!-- ======================= -->
-    <!-- ============================== -->
-    <!-- МОДАЛЬНОЕ ОКНО ВСТАВКИ РЕЗУЛЬТАТА ЗВОНКА В ТАБЛИЦУ  НАЧАЛО -->
-    <!-- Модальное окно -->
-    <div
-      id="callsModal"
-      class="modal"
-      style="
+    <a href="https://almiks.ru/stimulate" target="_blank" class="btn">| РИЕЛТОРЫ |</a>
+    <a href="https://almiks.ru/investremont" target="_blank" class="btn">| Макс ЦЕНА РЕМОНТА |</a>
+    <a href="https://almiks.ru/remont" target="_blank" class="btn">| Калькулятор Ремонта |</a>
+  </div>
+  <a name="search"></a>
+  <input type="file" id="fileInput" accept=".json" />
+  <!-- КНОПКИ ОКОНЧАНИЕ -->
+  <!-- ======================== -->
+  <!-- ОКНО ДЛЯ ФИЛЬТРАЦИИ НАЧАЛО-->
+  <div>
+    <input type="text" id="filter" placeholder="Фильтровать" />
+    <button id="btnFilter">Фильтровать</button>
+  </div>
+  <!-- ОКНО ДЛЯ ФИЛЬТРАЦИИ ОКОНЧАНИЕ -->
+  <!-- ======================= -->
+  <!-- ============================== -->
+  <!-- МОДАЛЬНОЕ ОКНО ВСТАВКИ РЕЗУЛЬТАТА ЗВОНКА В ТАБЛИЦУ  НАЧАЛО -->
+  <!-- Модальное окно -->
+  <div id="callsModal" class="modal" style="
         display: none;
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, 0.5);
         justify-content: center;
         align-items: center;
-      "
-    >
-      <div
-        style="
+      ">
+    <div style="
           background: #fff;
           padding: 24px;
           border-radius: 8px;
           width: 100%;
           max-width: 500px;
-        "
-      >
-        <h3>Новый звонок</h3>
-        <form id="callsForm">
-          <!-- Номер: не показываем, будет присвоен автоматически -->
-          <input type="hidden" id="callNumber" />
+        ">
+      <h3>Новый звонок</h3>
+      <form id="callsForm">
+        <!-- Номер: не показываем, будет присвоен автоматически -->
+        <input type="hidden" id="callNumber" />
 
-          <label
-            >Дата звонка:
-            <input type="date" id="callDate" required style="width: 100%" />
-          </label>
-          <br /><br />
+        <label>Дата звонка:
+          <input type="date" id="callDate" required style="width: 100%" />
+        </label>
+        <br /><br />
 
-          <label
-            >Адрес:
-            <input
-              type="text"
-              id="callAddress"
-              readonly
-              style="width: 100%"
-              title="Подставляется автоматически"
-            />
-          </label>
-          <br /><br />
+        <label>Адрес:
+          <input type="text" id="callAddress" readonly style="width: 100%" title="Подставляется автоматически" />
+        </label>
+        <br /><br />
 
-          <label
-            >Ссылка:
-            <input
-              type="url"
-              id="callLink"
-              readonly
-              style="width: 100%"
-              title="Подставляется автоматически"
-            />
-          </label>
-          <br /><br />
+        <label>Ссылка:
+          <input type="url" id="callLink" readonly style="width: 100%" title="Подставляется автоматически" />
+        </label>
+        <br /><br />
 
-          <label
-            >Результат разговора:
-            <textarea id="callResult" rows="4" style="width: 100%"></textarea>
-          </label>
-          <br /><br />
+        <label>Результат разговора:
+          <textarea id="callResult" rows="4" style="width: 100%"></textarea>
+        </label>
+        <br /><br />
 
-          <button
-            type="submit"
-            style="
+        <button type="submit" style="
               padding: 8px 16px;
               background: #007bff;
               color: #fff;
               border: none;
               border-radius: 4px;
-            "
-          >
-            Записать
-          </button>
-          <button type="button" id="callsModalClose" style="padding: 8px 16px">
-            Отмена
-          </button>
+            ">
+          Записать
+        </button>
+        <button type="button" id="callsModalClose" style="padding: 8px 16px">
+          Отмена
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО ВСТАВКИ РЕЗУЛЬТАТА ЗВОНКА В ТАБЛИЦУ  ОКОНЧАНИЕ -->
+  <!-- ============================================== -->
+  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ИЗЕНЕНИЯ СТРОК В ТАБЛИЦЕ ОБЪЯВЛЕНИЙ НАЧАЛО -->
+  <!-- Модальное окно с уникальными классами -->
+  <!-- Модальное окно с прокруткой -->
+  <div id="adEditModal" class="ad-edit-modal-overlay">
+    <div class="ad-edit-modal-window">
+      <div class="ad-edit-header">
+        <h3 class="ad-edit-title">Редактировать объявление</h3>
+        <span class="ad-edit-close">&times;</span>
+      </div>
+      <div class="ad-edit-content">
+        <form id="adEditForm" class="ad-edit-form">
+          <input type="hidden" id="adRowIndex" value="" />
+
+          <div class="ad-edit-form-group">
+            <label for="adId" class="ad-edit-label">id_Объявления</label>
+            <input type="text" id="adId" class="ad-edit-input-text" readonly />
+          </div>
+          <div class="ad-edit-form-group">
+            <label for="adAuction" class="ad-edit-label">Аукцион</label>
+            <input type="text" id="adAuction" class="ad-edit-input-text" />
+          </div>
+          <div class="ad-edit-form-group">
+            <label for="adNumber" class="ad-edit-label">Номер Заявки</label>
+            <input type="text" id="adNumber" class="ad-edit-input-text" />
+          </div>
+          <div class="ad-edit-form-group">
+            <label for="adAddress" class="ad-edit-label">Адрес Квартиры</label>
+            <input type="text" id="adAddress" class="ad-edit-input-text" />
+          </div>
+          <div class="ad-edit-form-group">
+            <label for="adPrice" class="ad-edit-label">Цена Квартиры</label>
+            <input type="text" id="adPrice" class="ad-edit-input-text" />
+          </div>
+          <div class="ad-edit-form-group">
+            <label for="adContact" class="ad-edit-label">Контакт</label>
+            <input type="text" id="adContact" class="ad-edit-input-text" />
+          </div>
+          <div class="ad-edit-form-group">
+            <label for="adTel" class="ad-edit-label">Телефон</label>
+            <textarea id="adTel" class="ad-edit-input-textarea"></textarea>
+          </div>
+          <div class="ad-edit-form-group">
+            <label for="adRelevance" class="ad-edit-label">Актуальность</label>
+            <input type="text" id="adRelevance" class="ad-edit-input-text"
+              placeholder="Например: Актуально / Продано" />
+          </div>
+
+          <button type="submit" class="ad-edit-btn-save">Сохранить</button>
         </form>
       </div>
     </div>
+  </div>
 
-    <!-- МОДАЛЬНОЕ ОКНО ВСТАВКИ РЕЗУЛЬТАТА ЗВОНКА В ТАБЛИЦУ  ОКОНЧАНИЕ -->
-    <!-- ============================================== -->
-    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ИЗЕНЕНИЯ СТРОК В ТАБЛИЦЕ ОБЪЯВЛЕНИЙ НАЧАЛО -->
-    <!-- Модальное окно с уникальными классами -->
-    <!-- Модальное окно с прокруткой -->
-    <div id="adEditModal" class="ad-edit-modal-overlay">
-      <div class="ad-edit-modal-window">
-        <div class="ad-edit-header">
-          <h3 class="ad-edit-title">Редактировать объявление</h3>
-          <span class="ad-edit-close">&times;</span>
-        </div>
-        <div class="ad-edit-content">
-          <form id="adEditForm" class="ad-edit-form">
-            <input type="hidden" id="adRowIndex" value="" />
+  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ИЗЕНЕНИЯ СТРОК В ТАБЛИЦЕ ОБЪЯВЛЕНИЙ ОКОНЧАНИЕ -->
+  <!-- ЗВОНКИ НАЧАЛО -->
+  <div id="callsContainer" class="container">
+    <a name="calls"></a>
+    <button id="openModalCalls">Открыть форму Звонка</button>
+    <div class="table-responsive-wrapper">
+      <table id="callsTabl" class="table adaptive-table table table-striped table-bordered">
+        <caption>
+          <h3>ЗВОНКИ</h3>
+        </caption>
+        <thead>
+          <th id="idAd">Номер</th>
+          <th id="dateOfCall">Дата</th>
+          <th id="adFlat">Адрес</th>
+          <th id="city">Ссылка</th>
+          <th id="callResult">Результат</th>
+          <th id="callActive">Активно?</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <!-- ЗВОНКИ ОКОНЧАНИЕ -->
+  <!-- ======================= -->
+  <!-- ОБЪЯВЛЕНИЯ О ПРОДАЖЕ НАЧАЛО -->
+  <div id="flatSale" class="container">
+    <a name="advertisements"></a>
+    <button id="openModalAdvertisements">Открыть форму Объявлений</button>
+    <button id="shortLinksAdvertisements">Активировать ссылки</button>
+    <div class="table-responsive-wrapper">
+      <table id="advertisementTabl" class="table adaptive-table table table-striped table-bordered">
+        <caption>
+          <h3>ОБЪЯВЛЕНИЯ</h3>
+        </caption>
+        <thead>
+          <th id="idAd">id_Объявления</th>
+          <th id="auctionFlat">Аукцион</th>
+          <th id="numberAdd">Номер Заявки</th>
+          <th id="adressOfFlat">Адрес Квартиры</th>
+          <th id="flatPrice">Цена Квартиры</th>
+          <th id="contact">Контакт</th>
+          <th id="tel">Телефон</th>
+          <th id="atten">Действие</th>
+          <th id="relevance">Актуальность</th>
+          <th id="hyperlinkAd">Ссылка на объявление</th>
+          <th id="advertctive">Активно?</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <!-- ОБЪЯВЛЕНИЯ О ПРОДАЖЕ ОКОНЧАНИЕ -->
+  <!-- =============== -->
+  <!-- КОНТЕЙНЕР ДЛЯ АУКЦИОНОВ НАЧАЛО -->
+  <div id="auctions" class="container">
+    <a name="zayavki"></a>
+    <button id="openModalZayavki">Открыть форму Заявок</button>
+    <input id="auctionNoTActive" type="checkbox" class="checkbox">
+    <span>Показывать скрытые Аукционы</span>
+    <!-- <button id="shortLinksZayavki">Активировать ссылки</button> -->
+    <div class="table-responsive-wrapper">
+      <table id="auctionTabl" class="table adaptive-table table table-striped table-bordered">
+        <caption>
+          <h3>ЗАЯВКИ</h3>
+        </caption>
+        <thead>
+          <th id="idGroup">id Заявки</th>
+          <th id="dateOfPlacement">Дата Размещения</th>
+          <!-- <th id="updated">Обновлено</th> -->
+          <th id="deadline">СрокПодачи</th>
+          <th id="deadlineResult">Подведение Итогов</th>
+          <th id="initialRate">Сумма_заявки</th>
+          <th id="objectTransferDeadlines">
+            Сроки Передачи Объекта (Контракт)
+          </th>
+          <th id="paymentPeriod">Сроки Оплаты (Контракт)</th>
+          <th id="city">Город</th>
+          <th id="Customer">ОрганизацияЗаказчик</th>
+          <th id="govContact">Контактное лицо</th>
+          <th id="hyperlink">Ссылка</th>
+          <th id="auctionActive">Активно?</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <!-- КОНТЕЙНЕР ДЛЯ АУКЦИОНОВ ОКОНЧАНИЕ -->
+</body>
 
-            <div class="ad-edit-form-group">
-              <label for="adId" class="ad-edit-label">id_Объявления</label>
-              <input
-                type="text"
-                id="adId"
-                class="ad-edit-input-text"
-                readonly
-              />
-            </div>
-            <div class="ad-edit-form-group">
-              <label for="adAuction" class="ad-edit-label">Аукцион</label>
-              <input type="text" id="adAuction" class="ad-edit-input-text" />
-            </div>
-            <div class="ad-edit-form-group">
-              <label for="adNumber" class="ad-edit-label">Номер Заявки</label>
-              <input type="text" id="adNumber" class="ad-edit-input-text" />
-            </div>
-            <div class="ad-edit-form-group">
-              <label for="adAddress" class="ad-edit-label"
-                >Адрес Квартиры</label
-              >
-              <input type="text" id="adAddress" class="ad-edit-input-text" />
-            </div>
-            <div class="ad-edit-form-group">
-              <label for="adPrice" class="ad-edit-label">Цена Квартиры</label>
-              <input type="text" id="adPrice" class="ad-edit-input-text" />
-            </div>
-            <div class="ad-edit-form-group">
-              <label for="adContact" class="ad-edit-label">Контакт</label>
-              <input type="text" id="adContact" class="ad-edit-input-text" />
-            </div>
-            <div class="ad-edit-form-group">
-              <label for="adTel" class="ad-edit-label">Телефон</label>
-              <textarea id="adTel" class="ad-edit-input-textarea"></textarea>
-            </div>
-            <div class="ad-edit-form-group">
-              <label for="adRelevance" class="ad-edit-label"
-                >Актуальность</label
-              >
-              <input
-                type="text"
-                id="adRelevance"
-                class="ad-edit-input-text"
-                placeholder="Например: Актуально / Продано"
-              />
-            </div>
-
-            <button type="submit" class="ad-edit-btn-save">Сохранить</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ИЗЕНЕНИЯ СТРОК В ТАБЛИЦЕ ОБЪЯВЛЕНИЙ ОКОНЧАНИЕ -->
-    <!-- ЗВОНКИ НАЧАЛО -->
-    <div id="callsContainer" class="container">
-      <a name="calls"></a>
-      <button id="openModalCalls">Открыть форму Звонка</button>
-      <div class="table-responsive-wrapper">
-        <table
-          id="callsTabl"
-          class="table adaptive-table table table-striped table-bordered"
-        >
-          <caption>
-            <h3>ЗВОНКИ</h3>
-          </caption>
-          <thead>
-            <th id="idAd">Номер</th>
-            <th id="dateOfCall">Дата</th>
-            <th id="adFlat">Адрес</th>
-            <th id="city">Ссылка</th>
-            <th id="callResult">Результат</th>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-    <!-- ЗВОНКИ ОКОНЧАНИЕ -->
-    <!-- ======================= -->
-    <!-- ОБЪЯВЛЕНИЯ О ПРОДАЖЕ НАЧАЛО -->
-    <div id="flatSale" class="container">
-      <a name="advertisements"></a>
-      <button id="openModalAdvertisements">Открыть форму Объявлений</button>
-      <button id="shortLinksAdvertisements">Активировать ссылки</button>
-      <div class="table-responsive-wrapper">
-        <table
-          id="advertisementTabl"
-          class="table adaptive-table table table-striped table-bordered"
-        >
-          <caption>
-            <h3>ОБЪЯВЛЕНИЯ</h3>
-          </caption>
-          <thead>
-            <th id="idAd">id_Объявления</th>
-            <th id="auctionFlat">Аукцион</th>
-            <th id="numberAdd">Номер Заявки</th>
-            <th id="adressOfFlat">Адрес Квартиры</th>
-            <th id="flatPrice">Цена Квартиры</th>
-            <th id="contact">Контакт</th>
-            <th id="tel">Телефон</th>
-            <th id="atten">Действие</th>
-            <th id="relevance">Актуальность</th>
-            <th id="hyperlinkAd">Ссылка на объявление</th>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-    <!-- ОБЪЯВЛЕНИЯ О ПРОДАЖЕ ОКОНЧАНИЕ -->
-    <!-- =============== -->
-    <!-- КОНТЕЙНЕР ДЛЯ АУКЦИОНОВ НАЧАЛО -->
-    <div id="auctions" class="container">
-      <a name="zayavki"></a>
-      <button id="openModalZayavki">Открыть форму Заявок</button>
-      <button id="shortLinksZayavki">Активировать ссылки</button>
-      <div class="table-responsive-wrapper">
-        <table
-          id="auctionTabl"
-          class="table adaptive-table table table-striped table-bordered"
-        >
-          <caption>
-            <h3>ЗАЯВКИ</h3>
-          </caption>
-          <thead>
-            <th id="idGroup">id Заявки</th>
-            <th id="dateOfPlacement">Дата Размещения</th>
-            <!-- <th id="updated">Обновлено</th> -->
-            <th id="deadline">СрокПодачи</th>
-            <th id="deadlineResult">Подведение Итогов</th>
-            <th id="initialRate">Сумма_заявки</th>
-            <th id="objectTransferDeadlines">
-              Сроки Передачи Объекта (Контракт)
-            </th>
-            <th id="paymentPeriod">Сроки Оплаты (Контракт)</th>
-            <th id="city">Город</th>
-            <th id="Customer">ОрганизацияЗаказчик</th>
-            <th id="govContact">Контактное лицо</th>
-            <th id="hyperlink">Ссылка</th>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </div>
-    <!-- КОНТЕЙНЕР ДЛЯ АУКЦИОНОВ ОКОНЧАНИЕ -->
-  </body>
 </html>
