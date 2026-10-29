@@ -34,6 +34,9 @@ const getAllCheckbox = () => {
       // console.log(lastCell);
       lonlyRow.style.display = "none";
       lonlyRow.classList.add("hidden-row");
+    } else {
+      lonlyRow.style.display = "";
+      lonlyRow.classList = "";
     }
   }
 
@@ -59,6 +62,7 @@ const getAllCheckbox = () => {
   //   }
   // Реализация п.3 Сохранении tbody.innerHtml таблиц в localeStorage
   const funSaveToLs = (getTable) => {
+    //ВЫКЛЮЧЕНО
     // 3.1 - получаю кнопку отправки данных в LS
     const btnSaveToLs = document.querySelector("#saveToLs");
     // 3.2  создаю внешнюю переменную для получения массива таблиц

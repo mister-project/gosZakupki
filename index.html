@@ -31,7 +31,7 @@
   <script src="./scripts/tableRowTable.js" defer></script>
   <script type="module" src="./scripts/modulHideRows.js" defer></script>
   <script src="./scripts/getAddResult.js" defer></script>
-  <script src="./scripts/filter.js" defer></script>
+  <script type='module' src="./scripts/filter.js" defer></script>
   <title>ГОСЗАКУП2.0</title>
 </head>
 
@@ -85,7 +85,7 @@
   <!-- ОКНО ДЛЯ ФИЛЬТРАЦИИ НАЧАЛО-->
   <div>
     <input type="text" id="filter" placeholder="Фильтровать" />
-    <button id="btnFilter">Фильтровать</button>
+    <button id="btnFilter">Очистить фильтр</button>
     <button id="saveToLs">Сохранить в LS</button>
     <button id="createCheсkBox">Вставить чек-боксы</button>
   </div>
@@ -194,9 +194,13 @@
             <textarea id="adTel" class="ad-edit-input-textarea"></textarea>
           </div>
           <div class="ad-edit-form-group">
-            <label for="adRelevance" class="ad-edit-label">Актуальность</label>
+            <label for="adRelevance" class="ad-edit-label">Перспектива</label>
             <input type="text" id="adRelevance" class="ad-edit-input-text"
-              placeholder="Например: Актуально / Продано" />
+              placeholder="Например: Да / Нет ( и почему)" />
+          </div>
+          <div class="ad-edit-form-group">
+            <label for="adRelevance" class="ad-edit-label">Актуально?</label>
+            <input type="text" id="adActualAdv" class="ad-edit-input-text" placeholder="Поставь 0 для скрытия" />
           </div>
 
           <button type="submit" class="ad-edit-btn-save">Сохранить</button>
@@ -251,7 +255,7 @@
           <th id="contact">Контакт</th>
           <th id="tel">Телефон</th>
           <th id="atten">Действие</th>
-          <th id="relevance">Актуальность</th>
+          <th id="relevance">Перспектива</th>
           <th id="hyperlinkAd">Ссылка на объявление</th>
           <th id="callActive">Активно?</th>
         </thead>

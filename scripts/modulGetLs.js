@@ -5,4 +5,5 @@
 console.log("modulGetLs.js в работе");
 export const funExpLs = (key, dataLs) => {
   localStorage.setItem(key, dataLs);
+  console.log('отработка функции { funExpLs } from "./modulGetLs.js');
 };

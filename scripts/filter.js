@@ -2,6 +2,8 @@
 console.log("filtr.js в работе");
 
 const getFilter = (idInput, idTable) => {
+  const btnFilter = document.querySelector("#btnFilter");
+
   const filter = document.querySelector(idInput);
   let strTable = document
     .querySelector(idTable)
@@ -17,6 +19,9 @@ const getFilter = (idInput, idTable) => {
     //         el.style.display = "none"
     //         console.log(el);
     //     })
+    btnFilter.addEventListener("click", () => {
+      funClearFilter(e);
+    });
     strTable.forEach((element) => {
       if (
         element.textContent.toUpperCase().includes(e.target.value.toUpperCase())
@@ -43,3 +48,9 @@ try {
 } catch (error) {
   console.log("Не работает фильтр для таблицы Обьявлений");
 }
+
+const funClearFilter = (el) => {
+  console.log("функция очистки");
+  el.target.value = "";
+  location.reload();
+};
