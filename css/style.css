@@ -384,3 +384,12 @@ input[type="checkbox" i] {
 .requare {
   width: 250px;
 }
+#auctionTabl td:nth-child(5) {
+  /* color: #bddb13; */
+  width: 100px;
+  color: #af1414;
+  padding: 0;
+  font-size: 20px;
+  display: inline-block;
+  background-color: #d1ce1b;
+}
