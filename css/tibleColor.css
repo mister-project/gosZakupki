@@ -20,3 +20,7 @@
 .row-yes {
   background-color: #36e445; /* очень бледный зелёный */
 }
+/* Серый для скрытых строк» */
+.hidden-row {
+  background-color: #c4c7c4; /* очень бледный зелёный */
+}

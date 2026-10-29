@@ -7,24 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- <meta name="”viewport”" content="”user-scalable"="no”" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/tibleColor.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+
   <link rel="stylesheet" href="./css/addResultCall.css" />
   <link rel="stylesheet" href="./css/modalOverlay.css" />
   <!-- стили модального окна для изменения срок таблицы -->
   <link rel="icon" type="image/png" href="jmg/150-150.png" />
-  <script src="./scripts/modalWindow.js" defer></script>
-  <script src="./scripts/exportToJson copy.js" defer></script>
+  <!-- <script type="module" src="./scripts/getLs.js" defer></script> Перспективный модуль для сохранения данных таблиц в LocalStorage-->
+  <script type="module" src="./scripts/modalWindow.js" defer></script>
+
+
+  <script src=" ./scripts/exportToJson copy.js" defer></script>
   <script src="./scripts/importJson.js" defer></script>
   <!-- <script src="./scripts/conversionToLink.js" defer></script> -->
   <script src="./scripts/transformationLinks.js" defer></script>
 
-  <script src="./scripts/tableRowTable.js" defer></script>
+
   <script src="./scripts/getTelLink.js" defer></script>
   <!-- скрипт преобразования телефона в ссылку -->
   <script src="./scripts/correctRowAdd.js" defer></script>
-  <script src="./scripts/getAddResult.js" defer></script>
 
+  <script src="./scripts/tableRowTable.js" defer></script>
+  <script type="module" src="./scripts/modulHideRows.js" defer></script>
+  <script src="./scripts/getAddResult.js" defer></script>
   <script src="./scripts/filter.js" defer></script>
   <title>ГОСЗАКУП2.0</title>
 </head>
@@ -53,6 +59,7 @@
         <li><a href="#calls">Звонки</a></li>
         <li><a href="#advertisements">Объявления</a></li>
         <li><a href="#zayavki">ГосЗакупки</a></li>
+        <li><a href="#advertSelect">ПОДБОРКИ</a></li>
       </ul>
     </div>
   </div>
@@ -79,6 +86,8 @@
   <div>
     <input type="text" id="filter" placeholder="Фильтровать" />
     <button id="btnFilter">Фильтровать</button>
+    <button id="saveToLs">Сохранить в LS</button>
+    <button id="createCheсkBox">Вставить чек-боксы</button>
   </div>
   <!-- ОКНО ДЛЯ ФИЛЬТРАЦИИ ОКОНЧАНИЕ -->
   <!-- ======================= -->
@@ -106,7 +115,7 @@
         <input type="hidden" id="callNumber" />
 
         <label>Дата звонка:
-          <input type="date" id="callDate" required style="width: 100%" />
+          <input type="text" id="callDate" required style="width: 100%" />
         </label>
         <br /><br />
 
@@ -200,7 +209,7 @@
   <!-- ЗВОНКИ НАЧАЛО -->
   <div id="callsContainer" class="container">
     <a name="calls"></a>
-    <button id="openModalCalls">Открыть форму Звонка</button>
+    <!-- <button id="openModalCalls">Открыть форму Звонка</button> -->
     <input id="callsNoTActive" type="checkbox" class="checkbox"><span> Показывать скрытые Звонки</span>
     <div class="table-responsive-wrapper">
       <table id="callsTabl" class="table adaptive-table table table-striped table-bordered">
@@ -212,6 +221,7 @@
           <th id="dateOfCall">Дата</th>
           <th id="adFlat">Адрес</th>
           <th id="city">Ссылка</th>
+
           <th id="callResult">Результат</th>
           <th id="callActive">Активно?</th>
         </thead>
@@ -243,7 +253,7 @@
           <th id="atten">Действие</th>
           <th id="relevance">Актуальность</th>
           <th id="hyperlinkAd">Ссылка на объявление</th>
-          <th id="advertctive">Активно?</th>
+          <th id="callActive">Активно?</th>
         </thead>
         <tbody></tbody>
       </table>
@@ -275,15 +285,47 @@
           <th id="paymentPeriod">Сроки Оплаты (Контракт)</th>
           <th id="city">Город</th>
           <th id="Customer">ОрганизацияЗаказчик</th>
-          <th id="govContact">Контактное лицо</th>
+          <th id="govContact">Контактное_лицо</th>
           <th id="hyperlink">Ссылка</th>
+          <th id="requare">Требования</th>
           <th id="auctionActive">Активно?</th>
+
         </thead>
         <tbody></tbody>
       </table>
     </div>
   </div>
   <!-- КОНТЕЙНЕР ДЛЯ АУКЦИОНОВ ОКОНЧАНИЕ -->
+
+  <!-- КОНТЕЙНЕР ПОДБОРОК НАЧАЛО -->
+  <!-- ================================== -->
+  <div id="advertSelect" class="container">
+    <a name="selectAdvert"></a>
+    <button id="openModalAdvertSelect">Открыть форму ПОДБОРОК</button>
+    <input id="advertSelectNoTActive" type="checkbox" class="checkbox"><span> Показывать скрытые Обьявления</span>
+    <!-- <button id="shortLinksAdvertisements">Активировать ссылки</button> -->
+    <div class="table-responsive-wrapper">
+      <table id="advertSelectTabl" class="table adaptive-table table table-striped table-bordered">
+        <caption>
+          <h3>ПОДБОРКИ</h3>
+        </caption>
+        <thead>
+          <th id="idSelAdv">id_Подборки</th>
+          <th id="nameSelAdv">Название подборки</th>
+          <th id="auctionName">Аукцион</th>
+          <th id="requOrder">Требования из заявки</th>
+          <th id="numberOrder">Номер Заявки ГосЗаказа</th>
+
+          <th id="hyperlinkAd">Ссылка на Подборку</th>
+          <th id="callActive">Активно?</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <!-- КОНТЕЙНЕР ПОДБОРОК ОКОНЧАНИЕ -->
+  <!-- ================================== -->
+
 </body>
 
 </html>

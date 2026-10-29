@@ -57,7 +57,9 @@
     btnCall.onclick = () => {
       // Заполняем форму данными из текущей строки
       fNumber.value = ""; // не показываем номер, он будет присвоен после вставки
-      const today = new Date().toISOString().split("T")[0];
+      // const today = new Date().toISOString().split("T")[0];
+      const today = new Date().toISOString().slice(0, 19);
+
       fDate.value = today;
 
       // Адрес: 4‑я ячейка (индекс 3)

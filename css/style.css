@@ -141,7 +141,7 @@ select option {
   /* margin: 40px; */
 
   align-self: center;
-  height: 400x;
+  height: 500x;
   min-width: 150px;
   border-radius: 40px;
   /* text-align: center; */
@@ -339,15 +339,15 @@ table.adaptive-table {
   }
 }
 /* ОБРЫВАЮ ССЫЛКИ И СТАВЛЮ МНОГОТОЧИЕ... */
-#advertisementTabl a {
+/* #advertisementTabl a {
   display: block;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
+} */
 
-#auctionTabl a {
+.adaptive-table a {
   display: block;
   max-width: 100%;
   overflow: hidden;
@@ -357,14 +357,30 @@ table.adaptive-table {
 .adaptive-table td:nth-child(4),
 .adaptive-table th:nth-child(4) {
   /* 4-я колонка — адрес */
-  max-width: 300px;
+  max-width: 200px;
 }
 
-.adaptive-table td:last-child,
-.adaptive-table th:last-child {
+#auctionTabl td:nth-child(12),
+#auctionTabl th:nth-child(12) {
+  width: 250px;
+}
+
+#auctionTabl td:nth-child(11),
+#auctionTabl th:nth-child(11) {
+  /* color: #bddb13; */
+  max-width: 100px;
+}
+
+/* .adaptive-table td:last-child,
+.adaptive-table th:last-child { */
+.adaptive-table td,
+.adaptive-table th {
   /* последняя колонка — ссылка */
-  max-width: 350px;
+  max-width: 250px;
 }
 input[type="checkbox" i] {
   width: 20px;
+}
+.requare {
+  width: 250px;
 }

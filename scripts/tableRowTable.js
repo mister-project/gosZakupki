@@ -1,3 +1,5 @@
+console.log("скрипт по цветам строк tableRowtable в работе");
+
 document.addEventListener("DOMContentLoaded", () => {
   const table = document.getElementById("advertisementTabl");
   if (!table) return;
@@ -13,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cells.length < 8) return;
 
     const value = cells[8].textContent.trim();
+
     const lower = value.toLowerCase();
 
     // Убираем старые классы перед назначением новых

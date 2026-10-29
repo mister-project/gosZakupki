@@ -8,7 +8,7 @@ const getFilter = (idInput, idTable) => {
     .querySelector("tbody")
     .querySelectorAll("tr");
 
-  console.log(strTable);
+  // console.log(strTable);
   // let strTableNo = document.querySelectorAll('.trNoFilter')
   // // console.log(document.querySelector('span'))
 

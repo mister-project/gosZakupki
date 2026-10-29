@@ -38,6 +38,8 @@ const getModalWindow = (modalWindow) => {
       .querySelector("tbody")
       .querySelectorAll("tr")
       .forEach((str) => {
+        if (str.style.display === "none") return;
+
         const option = document.createElement("option");
 
         // selectContainer.appendChild(option);
@@ -47,7 +49,7 @@ const getModalWindow = (modalWindow) => {
           str.querySelectorAll("td")[modalWindow.idColSelectValue].innerText;
 
         document.querySelector("#points").appendChild(option);
-        console.log(option.innerText);
+        // console.log(option.innerText);
       });
   };
   //ОТКРЫТИЕ МОДАЛЬНОГО ОКНА
@@ -188,8 +190,6 @@ try {
   document
     .querySelector("#openModalAdvertisements")
     .addEventListener("click", () => {
-      console.log("жмяк");
-
       getModalWindow(flatAd);
     });
   const flatAd = {
@@ -231,4 +231,30 @@ try {
   localStor(zayavki); //Запуск функции загрузки данныех из  LS
 } catch (error) {
   console.log("неподгружается таблица заявок");
+}
+
+// Подключение таблицы Подборок
+
+try {
+  const selectAdv = {
+    columnIdStr: 0,
+    containerId: "#advertSelect",
+    tableId: "#advertSelectTabl",
+    modalButtonId: "#openModalAdvertSelect",
+    modalId: "#modal",
+    idInputSelect: 2, // Определяем в каком поле будет селект
+    idTableSelect: "#auctionTabl", //из какой таблицы вставляем значения
+    idColSelect: 7, //Из какого столбца таблицы-донера будут выводиться значения в вып. списке
+    idColSelectValue: 11, // Из какого столбца таблицы-донера будут вставляться значения в следущий столбец
+  };
+
+  document
+    .querySelector("#openModalAdvertSelect")
+    .addEventListener("click", () => {
+      getModalWindow(selectAdv);
+    });
+
+  localStor(selectAdv);
+} catch (error) {
+  console.log("неполадочки в таблице ПОДБОРОК", error);
 }
