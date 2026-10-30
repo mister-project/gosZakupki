@@ -58,7 +58,7 @@
       // Заполняем форму данными из текущей строки
       fNumber.value = ""; // не показываем номер, он будет присвоен после вставки
       // const today = new Date().toISOString().split("T")[0];
-      const today = new Date().toISOString().slice(0, 19);
+      const today = new Date(Date.now() + 3 * 60 * 60 * 1000).toISOString().slice(0, 19);
 
       fDate.value = today;
 
@@ -131,6 +131,6 @@
   }
 })();
 
-document
-  .querySelector("#shortLinksAdvertisements")
-  ?.addEventListener("click", () => console.log("змяк"));
+// document
+//   .querySelector("#shortLinksAdvertisements") ?
+//   .addEventListener("click", () => console.log("змяк"));
