@@ -258,3 +258,28 @@ try {
 } catch (error) {
   console.log("неполадочки в таблице ПОДБОРОК", error);
 }
+
+// Загружаем данные из LS в таблицу Звонков
+try {
+  const GetTableCall = {
+    columnIdStr: '',
+    containerId: "#callsContainer",
+    tableId: "#callsTabl",
+    modalButtonId: "",
+    modalId: "",
+    idInputSelect: '', // Определяем в каком поле будет селект
+    idTableSelect: "", //из какой таблицы вставляем значения
+    idColSelect: '', //Из какого столбца таблицы-донера будут выводиться значения в вып. списке
+    idColSelectValue: '', // Из какого столбца таблицы-донера будут вставляться значения в следущий столбец
+  };
+
+  // document
+  //   .querySelector("#openModalAdvertSelect")
+  //   .addEventListener("click", () => {
+  //     getModalWindow(selectAdv);
+  //   });
+
+  localStor(GetTableCall);
+} catch (error) {
+  console.log("неполадочки в таблице ЗВОНКОВ", error);
+}
