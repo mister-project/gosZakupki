@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Убираем старые классы перед назначением новых
     row.classList.remove("row-no", "row-yes");
 
-    if (lower.includes("нет")) {
+    if (lower.includes("нет*")) {
       row.classList.add("row-no");
-    } else if (lower.includes("да")) {
+    } else if (lower.includes("да*")) {
       row.classList.add("row-yes");
     }
     // Если значение не «да» и не «нет», строка остаётся без спеццвета
