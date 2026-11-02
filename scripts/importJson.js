@@ -19,6 +19,7 @@ document
 
       reader.readAsText(file);
     }
+    location.reload(); //ПЕРЕЗАГРУЗКА СТРАНИЦЫ
   });
 
 function populateTables(data) {

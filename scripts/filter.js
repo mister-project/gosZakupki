@@ -42,13 +42,28 @@ try {
 // auctionTabl
 
 // ФИЛЬТР ДЛЯ ТАБЛИЦЫ ОБЪЯВЛЕНИЙ
-// Фильтр для строк таблицы вещей
+
 try {
   getFilter("#filter", "#advertisementTabl");
 } catch (error) {
   console.log("Не работает фильтр для таблицы Обьявлений");
 }
 
+// ФИЛЬТР ДЛЯ ТАБЛИЦЫ ЗАКУПОК
+try {
+  getFilter("#filter", "#auctionTabl");
+} catch (error) {
+  console.log("Не работает фильтр для таблицы ЗАКУПОК");
+}
+
+// ФИЛЬТР ДЛЯ ТАБЛИЦЫ ПОДБОРОК
+try {
+  getFilter("#filter", "#advertSelectTabl");
+} catch (error) {
+  console.log("Не работает фильтр для таблицы ЗАКУПОК");
+}
+
+//ФУНКЦИЯ ОЧИСТКИ  ФИЛЬТРА ПО КНОПКЕ
 const funClearFilter = (el) => {
   console.log("функция очистки");
   el.target.value = "";
