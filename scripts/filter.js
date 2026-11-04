@@ -14,14 +14,29 @@ const getFilter = (idInput, idTable) => {
   // let strTableNo = document.querySelectorAll('.trNoFilter')
   // // console.log(document.querySelector('span'))
 
+  filter.value = localStorage.getItem("topFilter");
+
+  btnFilter.addEventListener("click", () => {
+    funClearFilter(filter); // очистка фильтра по кнопке
+  });
+
+  //ПЕРВЫЙ ПОИСК СТРОК ПО ЗНАЧЕНИЮ ФИЛЬТРА ВЗЯТОМУ ИЗ localeStorage = Начало
+  if (filter.value) {
+    strTable.forEach((row) => {
+      if (row.textContent.toUpperCase().includes(filter.value.toUpperCase())) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
+  //ПЕРВЫЙ ПОИСК СТРОК ПО ЗНАЧЕНИЮ ФИЛЬТРА ВЗЯТОМУ ИЗ localeStorage = Начало
   filter.addEventListener("input", (e) => {
     //     strTableNo.forEach((el) => {
     //         el.style.display = "none"
     //         console.log(el);
     //     })
-    btnFilter.addEventListener("click", () => {
-      funClearFilter(e);
-    });
+
     strTable.forEach((element) => {
       if (
         element.textContent.toUpperCase().includes(e.target.value.toUpperCase())
@@ -30,6 +45,8 @@ const getFilter = (idInput, idTable) => {
       } else {
         element.style.display = "none";
       }
+
+      localStorage.setItem("topFilter", e.target.value); // запись значения в LocaleStorage
     });
   });
 };
@@ -66,6 +83,7 @@ try {
 //ФУНКЦИЯ ОЧИСТКИ  ФИЛЬТРА ПО КНОПКЕ
 const funClearFilter = (el) => {
   console.log("функция очистки");
-  el.target.value = "";
+  el.value = "";
   location.reload();
+  localStorage.removeItem("topFilter");
 };
