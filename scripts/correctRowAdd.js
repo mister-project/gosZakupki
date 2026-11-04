@@ -1,4 +1,5 @@
 "use strict";
+//СКрипт коррекции строк в ТАБЛИЦЕ
 console.log("скрипт correctRowAdd в работе");
 
 (function () {
@@ -41,6 +42,8 @@ console.log("скрипт correctRowAdd в работе");
 
     // Перспектива: только текст
     document.getElementById("adRelevance").value = cells[8].textContent.trim();
+    // Ссылка: только текст
+    document.getElementById("adLinks").value = cells[9].textContent.trim();
 
     // Актуально: только текст
     document.getElementById("adActualAdv").value = cells[10].textContent.trim();
