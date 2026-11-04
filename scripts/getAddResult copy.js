@@ -86,11 +86,13 @@
   if (btnClose) {
     btnClose.onclick = () => {
       if (modal) modal.style.display = "none";
+      // location.reload();
     };
   }
   if (modal) {
     modal.onclick = (e) => {
       if (e.target === modal) modal.style.display = "none";
+      // location.reload();
     };
   }
 

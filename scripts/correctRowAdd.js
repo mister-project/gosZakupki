@@ -124,6 +124,7 @@ console.log("скрипт correctRowAdd в работе");
 
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
+    // location.reload();
   });
 
   modal.addEventListener("click", (e) => {
@@ -172,6 +173,7 @@ console.log("скрипт correctRowAdd в работе");
     }
 
     modal.style.display = "none";
+    location.reload(); //Перезагружаем страницу
     // alert('Данные обновлены и сохранены в localStorage (столбец «Действие» очищен во всей таблице)');
   });
 })();
