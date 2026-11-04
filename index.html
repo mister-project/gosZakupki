@@ -31,6 +31,7 @@
   <script src="./scripts/tableRowTable.js" defer></script>
   <script type="module" src="./scripts/modulHideRows.js" defer></script>
   <script src="./scripts/getAddResult.js" defer></script> <!-- Добавляем результат звонка -->
+  <script src="./scripts/sortColumn.js" defer></script> <!-- СОРТИРОВКА СТРОК ТАБЛИЦ ПО КОЛОНКАМ-->
   <script src="./scripts/sortTable.js" defer></script> <!-- Сортировка строк -->
 
   <script type='module' src="./scripts/filter.js" defer></script>
@@ -248,6 +249,16 @@
     <input id="advertNoTActive" type="checkbox" class="checkbox"><span> Показывать скрытые Обьявления</span>
     <!-- <button id="shortLinksAdvertisements">Активировать ссылки</button> -->
     <div class="table-responsive-wrapper">
+      <!-- Поля ДЛЯ СОРТИРОВКИ НАЧАЛО -->
+      <select id="columnSelect">
+        <option value="">-- Выберите столбец --</option>
+      </select>
+
+      <select id="orderSelect">
+        <option value="asc">По возрастанию</option>
+        <option value="desc">По убыванию</option>
+      </select>
+      <!-- Поля ДЛЯ СОРТИРОВКИ КОНЧАНИЕ -->
       <table id="advertisementTabl" class="table adaptive-table table table-striped table-bordered">
         <caption>
           <h3>ОБЪЯВЛЕНИЯ</h3>
