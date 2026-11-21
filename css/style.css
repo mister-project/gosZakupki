@@ -3,6 +3,9 @@
   padding: 0;
 }
 
+body {
+  font-family: "Century Gothic", "Apple Gothic", Futura, sans-serif;
+}
 .container {
   /* display: flex; */
   width: 150%;
