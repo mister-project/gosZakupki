@@ -19,8 +19,8 @@ const tableSort = (idTable) => {
   table.tBodies[0].append(...sortedRows);
 };
 
-try {
-  tableSort("#advertisementTabl");
-} catch (error) {
-  console.log('"Таблица вещей" недоступна для сортировки');
-}
+// try {
+//   tableSort("#advertisementTabl");
+// } catch (error) {
+//   console.log('"Таблица вещей" недоступна для сортировки');
+// }

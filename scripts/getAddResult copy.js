@@ -32,15 +32,15 @@
   }
 
   // Функция: сортировка строк по дате (новые сверху)
-  function sortCallsByDate() {
-    const rows = Array.from(callsTbody.querySelectorAll("tr"));
-    rows.sort((a, b) => {
-      const da = new Date(a.cells[1].textContent);
-      const db = new Date(b.cells[1].textContent);
-      return db - da; // обратный порядок
-    });
-    rows.forEach((r) => callsTbody.appendChild(r));
-  }
+  // function sortCallsByDate() {
+  //   const rows = Array.from(callsTbody.querySelectorAll("tr"));
+  //   rows.sort((a, b) => {
+  //     const da = new Date(a.cells[1].textContent);
+  //     const db = new Date(b.cells[1].textContent);
+  //     return db - da; // обратный порядок
+  //   });
+  //   rows.forEach((r) => callsTbody.appendChild(r));
+  // }
 
   // Добавляем кнопки-иконки в 8-й столбец (индекс 7)
   const rows = advTable.querySelectorAll("tbody tr");

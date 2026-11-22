@@ -6,6 +6,7 @@ console.log("скрипт сортаировки по столбцам sortColum
  * @param {string} columnSelectId - ID select для выбора столбца
  * @param {string} orderSelectId - ID select для выбора направления сортировки
  */
+import { funExpLs } from "./modulGetLs.js";
 function initTableSort(tableId, columnSelectId, orderSelectId) {
   const table = document.getElementById(tableId);
   const columnSelect = document.getElementById(columnSelectId);
@@ -113,6 +114,8 @@ function initTableSort(tableId, columnSelectId, orderSelectId) {
 
     rows.sort(compare);
     rows.forEach((row) => tbody.appendChild(row));
+    // console.log(tbody.innerHTML);
+    funExpLs("advertisementTabl"); //Перезапись содержимоо таблицы в Хранилище
   };
 
   columnSelect.addEventListener("change", sortTable);
@@ -168,4 +171,6 @@ function initTableSort(tableId, columnSelectId, orderSelectId) {
 // СОРТИРОВКА ТАБЛИЦЫ ОБЬЯВЛЕНИЙ
 try {
   initTableSort("advertisementTabl", "columnSelect", "orderSelect");
-} catch (error) {}
+} catch (error) {
+  console.log("В модуле сортировки не отработала одна или несколько функций");
+}
